@@ -3,7 +3,6 @@ import wx
 import os
 import pygame
 import random
-from PyQt4.Qt import *
 
 class PlayerInterface(wx.Frame):
     def __init__(self,title):
@@ -11,6 +10,7 @@ class PlayerInterface(wx.Frame):
         self.InitUI()
         self.Centre()
 
+    #Init the window of the music player
     def InitUI(self):
         #place a button
         panel = wx.Panel(self)
@@ -18,7 +18,7 @@ class PlayerInterface(wx.Frame):
         self.song_title = wx.StaticText(panel,-1,size=wx.DefaultSize,style=wx.TE_CENTER,label='青花瓷')
         self.InitButton(panel)
 
-
+    #Init the buttons on the panel
     def InitButton(self,panel):
         self.buttonPlay = wx.Button(parent=panel,label='播放',pos=(80,40))
         self.buttonPause = wx.Button(parent=panel,label='暂停',pos=(80,80))
@@ -27,6 +27,7 @@ class PlayerInterface(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnPause, self.buttonPause)
         self.Bind(wx.EVT_BUTTON, self.OnStop, self.buttonStop)
 
+    #some control methods
     def OnPlay(self,event):
         musics = self.InitPlaylist()
         for music in musics:
@@ -44,13 +45,14 @@ class PlayerInterface(wx.Frame):
     def OnStop(self,event):
         self.song_title.SetLabel('已停止...')
 
+    #Init the playlist
     def InitPlaylist(self):
         folder = r'/home/zhangkai/Music/'
         musics = [folder+music for music in os.listdir(folder) if music.endswith('.mp3')]
         return musics
 
 
-
+#Start the music player
 app = wx.App()
 player = PlayerInterface('MusicPlayer')
 player.Show()
