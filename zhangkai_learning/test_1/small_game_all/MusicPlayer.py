@@ -3,6 +3,7 @@ import wx
 import os
 import pygame
 import random
+import wx.lib.mixins.listctrl  as  listmix
 
 class PlayerInterface(wx.Frame):
     def __init__(self,title):
@@ -50,6 +51,15 @@ class PlayerInterface(wx.Frame):
         folder = r'/home/zhangkai/Music/'
         musics = [folder+music for music in os.listdir(folder) if music.endswith('.mp3')]
         return musics
+
+class TestListCtrl(wx.ListCtrl,listmix.ListCtrlAutoWidthMixin):
+    def __init__(self, parent, ID, pos=wx.DefaultPosition,
+                 size=wx.DefaultSize, style=wx.LC_REPORT | wx.LC_NO_HEADER | wx.LC_HRULES):
+        wx.ListCtrl.__init__(self, parent, ID, pos, size, style)
+        listmix.ListCtrlAutoWidthMixin.__init__(self)
+
+    def initListCtrlData(self,musics):
+        pass
 
 
 #Start the music player
