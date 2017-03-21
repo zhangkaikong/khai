@@ -28,7 +28,6 @@ public class KastemeView extends View {
 
     public KastemeView(Context context, AttributeSet attrs){
         super(context,attrs);
-
         TypedArray actionbarSizeTypedArray = context.obtainStyledAttributes(new int[] { android.R.attr.actionBarSize});
         float h = actionbarSizeTypedArray.getDimension(0, 0);
         mActionBarHeight = (int)h;
@@ -73,10 +72,10 @@ public class KastemeView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        mShowText = "";
+        mShowText = ""+event.getAction();
         mX = (int) event.getX();
         mY = (int) event.getY();
-        mShowText += "x=" + mX + ",y=" + mY;
+//        mShowText += "x=" + mX + ",y=" + mY;
         invalidate();
         return super.onTouchEvent(event);
     }
