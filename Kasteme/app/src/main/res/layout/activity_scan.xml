@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".showactivities.AnimatorActivity">
-<com.zhangkai.kasteme.kasteme.customview.AnimatorView
-    android:id="@+id/Animator"
+    tools:context="com.zhangkai.kasteme.kasteme.showactivities.ScanActivity">
+<com.zhangkai.kasteme.kasteme.customview.ScanView
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 </RelativeLayout>

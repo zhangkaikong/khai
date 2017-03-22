@@ -8,14 +8,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KaijunActivity">
+        <activity android:name=".showactivities.KaijunActivity" />
+        <activity android:name=".showactivities.AnimatorActivity" />
+        <activity android:name=".showactivities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AnimatorActivity"></activity>
+        <activity android:name=".showactivities.LineChartActivity" />
+        <activity android:name=".showactivities.ScanActivity"></activity>
     </application>
 
 </manifest>

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhangkai.kasteme.kasteme.KaijunActivity">
+    tools:context=".showactivities.KaijunActivity">
 
-<com.zhangkai.kasteme.kasteme.KastemeView
+<com.zhangkai.kasteme.kasteme.customview.KastemeView
     android:id="@+id/kastemeview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
